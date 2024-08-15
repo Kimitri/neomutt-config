@@ -1,0 +1,102 @@
+# IMAP and SMTP config
+## See scripts/mutt_oauth2/mutt_oauth2.py.README for more information
+source "~/.config/neomutt/user"
+set from=${imap_user}
+set folder="imap://outlook.office365.com/"
+set smtp_url="smtp://${imap_user}@smtp.office365.com:587/"
+set imap_authenticators="xoauth2"
+set imap_oauth_refresh_command="~/.config/neomutt/scripts/mutt_oauth2/mutt_oauth2.py ~/.config/neomutt/scripts/mutt_oauth2/${imap_user}"
+set smtp_authenticators=${imap_authenticators}
+set smtp_oauth_refresh_command=${imap_oauth_refresh_command}
+
+# File storage settings
+set signature="~/.config/neomutt/signature"
+set message_cachedir="~/.config/neomutt/message_cache"
+set header_cache="~/.config/neomutt/header_cache"
+set tmpdir="~/.config/neomutt/tmp"
+
+# Text view first
+set pager_stop="yes"
+set smart_wrap="yes"
+alternative_order text/plain
+auto_view text/html
+set reverse_name=yes
+set reverse_realname=yes
+
+# Text editor
+#set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "?^$"'
+set editor="nvim"
+set sig_on_top=yes
+
+# Adress book handling
+set sort_alias=alias
+set reverse_alias=yes
+set alias_file="~/.config/neomutt/aliases"
+source "~/.config/neomutt/gal"
+source "~/.config/neomutt/aliases"
+source "~/.config/neomutt/mailing_lists"
+
+# Thread ordering
+set use_threads = 'reverse'
+set sort = 'threads'
+set sort_browser="reverse-date"
+set sort_aux="last-date-received"
+set collapse_all = yes
+set date_format="%d.%m.%Y %H:%M"
+set index_format=" %?M?   ↳&%4C?   %Z      %d     %-15.15n    %s"
+
+# Key bindings
+
+## Mailboxes
+bind    index   g  noop
+bind    index   G  imap-fetch-mail
+macro   index   gi "<change-folder>=INBOX<enter>"       "Go to Inbox"
+macro   index   gs "<change-folder>=Sent<quote-char><space>Items<enter>"    "Go to Sent"
+macro   index   gd "<change-folder>=Drafts<enter>"  "Go to Drafts"
+macro   index   gt "<change-folder>=Trash<enter>"   "Go to Trash"
+
+## Index
+bind    index   k           previous-entry
+bind    index   j           next-entry
+bind    index   d           delete-message
+bind    index   n           next-entry
+bind    index   p           previous-entry
+macro   index   Q           ":set quit=yes\nq" "Quit mutt without asking"
+bind    index   C           noop
+bind    index   -           collapse-thread
+bind    index   _           collapse-all
+
+## Pager
+bind    pager   <up>        previous-line
+bind    pager   <down>      next-line
+bind    pager   <left>      previous-entry
+bind    pager   <right>     next-entry
+bind    pager   <delete>    delete-message
+bind    pager   k           previous-line
+bind    pager   j           next-line
+bind    pager   n           next-entry
+bind    pager   p           previous-entry
+bind    pager   w           previous-page
+
+# Colors
+color   normal      white default
+color   attachment  brightyellow default
+color   hdrdefault  cyan default
+#color   indicator   black cyan
+color   markers     brightred default
+color   quoted      green default
+color   signature   cyan default
+color   status      black blue
+color   tilde       blue default
+color   tree        red default
+color   header      brightgreen default ^From:
+color   header      brightcyan default ^To:
+color   header      brightcyan default ^Reply-To:
+color   header      brightcyan default ^Cc:
+color   header      brightblue default ^Subject:
+color   body        brightred default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color   body        brightblue default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+
+# For better looks
+#set markers=no # don't put '+' at the beginning of wrapped lines
+#set pager_index_lines= 5 # how large is the index window?
