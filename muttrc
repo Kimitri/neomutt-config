@@ -18,6 +18,7 @@ set tmpdir="~/.config/neomutt/tmp"
 # Text view first
 set pager_stop="yes"
 set smart_wrap="yes"
+set wrap="120"
 alternative_order text/plain
 auto_view text/html
 set reverse_name=yes
