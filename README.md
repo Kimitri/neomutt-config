@@ -17,7 +17,7 @@ Mailcap rules can be used for displaying certain MIME parts in Neomutt.
 `text/html` MIME parts can be displayed using Lynx by adding the following line to `~/.mailcap`:
 
 ```
-text/html; lynx -dump -display_charset=utf-8 -assume_charset=utf-8 '%s' | more; nametemplate=%s.html; copiousoutput;
+text/html; lynx -dump -display_charset=utf-8 '%s' | more; nametemplate=%s.html; copiousoutput;
 ```
 
 ### Display images using Kitty's icat kitten through mailcap
