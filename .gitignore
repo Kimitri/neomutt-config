@@ -1,4 +1,5 @@
 header_cache
+header_cache-lock
 aliases
 user
 tmp
