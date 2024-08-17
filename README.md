@@ -6,6 +6,7 @@ I have successfully used this configuration on the following systems:
 
 - macOS 14 Sonoma (x2)
 - NixOS 23.11 Tapir
+- NixOS 24.05 Uakari
 
 ## Remarks
 
@@ -25,4 +26,6 @@ programs.gnupg.agent = {
   pinentryFlavor = "curses";
 };
 ```
+
+On NixOS 24.05 Uakari the `pinentryFlavor` key does not exist. It's replaced by `pinentryPackage = pkgs.pinentry-curses`.
 
