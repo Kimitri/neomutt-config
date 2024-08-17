@@ -8,9 +8,9 @@ I have successfully used this configuration on the following systems:
 - NixOS 23.11 Tapir
 - NixOS 24.05 Uakari
 
-## Remarks
+## Mailcap rules for displaying different MIME parts
 
-Here are some remarks regarding getting this thing running on different systems.
+Mailcap rules can be used for displaying certain MIME parts in Neomutt.
 
 ### Display HTML e-mail using Lynx through mailcap
 
@@ -19,6 +19,18 @@ Here are some remarks regarding getting this thing running on different systems.
 ```
 text/html; lynx -dump -display_charset=utf-8 -assume_charset=utf-8 '%s' | more; nametemplate=%s.html; copiousoutput;
 ```
+
+### Display images using Kitty's icat kitten through mailcap
+
+Image attachments can be displayed using Kitty's icat kitten by adding the following line to `~/.mailcap`:
+
+```
+image/*; echo '%s' && kitten icat '%s' && read -p "Press enter to continue";
+```
+
+## Remarks
+
+Here are some remarks regarding getting this thing running on different systems.
 
 ### macOS
 
