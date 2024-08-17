@@ -12,6 +12,14 @@ I have successfully used this configuration on the following systems:
 
 Here are some remarks regarding getting this thing running on different systems.
 
+### Display HTML e-mail using Lynx through mailcap
+
+`text/html` MIME parts can be displayed using Lynx by adding the following line to `~/.mailcap`:
+
+```
+text/html; lynx -dump -display_charset=utf-8 -assume_charset=utf-8 '%s' | more; nametemplate=%s.html; copiousoutput;
+```
+
 ### macOS
 
 The OAuth2 script requires a rather recent version of Python 3. Something like 3.12.x should do. You can try running the script in a Nix shell with `nix-shell -p python3`.
