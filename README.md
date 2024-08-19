@@ -1,6 +1,6 @@
-# My Neomutt config feat. Office 365 IMAP
+# My NeoMutt config feat. Office 365 IMAP
 
-This is my Neomutt config that is heavily based on https://github.com/ork/mutt-office365. The difference is that my configuration is modified to use the OAuth2 authentication method. See `scripts/mutt_oauth2/mutt_oauth2.py.README` for further information.
+This is my NeoMutt config that is heavily based on https://github.com/ork/mutt-office365. The difference is that my configuration is modified to use the OAuth2 authentication method. See `scripts/mutt_oauth2/mutt_oauth2.py.README` for further information.
 
 I have successfully used this configuration on the following systems:
 
@@ -10,7 +10,7 @@ I have successfully used this configuration on the following systems:
 
 ## Mailcap rules for displaying different MIME parts
 
-Mailcap rules can be used for displaying certain MIME parts in Neomutt.
+Mailcap rules can be used for displaying certain MIME parts in NeoMutt.
 
 ### Display HTML e-mail using Lynx through mailcap
 
