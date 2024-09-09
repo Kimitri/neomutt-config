@@ -10,7 +10,7 @@ set smtp_authenticators=${imap_authenticators}
 set smtp_oauth_refresh_command=${imap_oauth_refresh_command}
 
 # File storage settings
-set signature="~/.config/neomutt/signature"
+set signature="cat ~/.config/neomutt/signature-$(ls ~/.config/neomutt/signature-* | awk -F '-' '{print $NF}' | fzf) |"
 set message_cachedir="~/.config/neomutt/message_cache"
 set header_cache="~/.config/neomutt/header_cache"
 set tmpdir="~/.config/neomutt/tmp"
