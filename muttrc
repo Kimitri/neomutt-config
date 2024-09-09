@@ -79,6 +79,9 @@ bind    pager   n           next-entry
 bind    pager   p           previous-entry
 bind    pager   w           previous-page
 
+## Attachments
+macro attach W "<save-entry><bol>~/Downloads/<eol>" "Save to downloads"
+
 ## Url handling
 macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
 macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
