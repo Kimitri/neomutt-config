@@ -66,6 +66,7 @@ macro   index   Q           ":set quit=yes\nq" "Quit mutt without asking"
 bind    index   C           noop
 bind    index   -           collapse-thread
 bind    index   _           collapse-all
+bind    index   r           group-reply
 
 ## Pager
 bind    pager   <up>        previous-line
@@ -78,6 +79,7 @@ bind    pager   j           next-line
 bind    pager   n           next-entry
 bind    pager   p           previous-entry
 bind    pager   w           previous-page
+bind    pager   r           group-reply
 
 ## Attachments
 macro attach W "<save-entry><bol>~/Downloads/<eol>" "Save to downloads"
