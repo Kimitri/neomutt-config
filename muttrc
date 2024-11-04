@@ -92,11 +92,11 @@ macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract 
 color   normal      white default
 color   attachment  brightyellow default
 color   hdrdefault  cyan default
-#color   indicator   black cyan
+color   indicator   white brightblack
 color   markers     brightred default
 color   quoted      green default
 color   signature   cyan default
-color   status      black blue
+color   status      black brightcyan
 color   tilde       blue default
 color   tree        red default
 color   header      brightgreen default ^From:
