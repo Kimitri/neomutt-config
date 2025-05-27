@@ -15,6 +15,9 @@ set message_cachedir="~/.config/neomutt/message_cache"
 set header_cache="~/.config/neomutt/header_cache"
 set tmpdir="~/.config/neomutt/tmp"
 
+set header_cache_compress_method="zlib"
+set header_cache_compress_level="9"
+
 # Text view first
 set pager_stop="yes"
 set smart_wrap="yes"
